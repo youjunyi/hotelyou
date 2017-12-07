@@ -1,0 +1,11 @@
+school.libenhe.hotel.dao
+school.libenhe.hotel.dao.impl
+school.libenhe.hotel.entity
+school.libenhe.hotel.factory
+school.libenhe.hotel.filter
+school.libenhe.hotel.service
+school.libenhe.hotel.service.impl
+school.libenhe.hotel.servlet
+school.libenhe.hotel.test.daotest
+school.libenhe.hotel.test.servicetest
+school.libenhe.hotel.utils
