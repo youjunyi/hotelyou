@@ -9,6 +9,16 @@ public class Condition {
 	private String foodName;
 	private int foodType_id;
 
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getFoodName() {
 		return foodName;
 	}
@@ -27,8 +37,10 @@ public class Condition {
 
 	@Override
 	public String toString() {
-		return "Condition [foodName=" + foodName + ", foodType_id="
-				+ foodType_id + "]";
+		return "Condition{" +
+				"foodName='" + foodName + '\'' +
+				", foodType_id=" + foodType_id +
+				", name='" + name + '\'' +
+				'}';
 	}
-
 }

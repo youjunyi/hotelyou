@@ -32,6 +32,11 @@
         <servlet-class>school.libenhe.hotel.servlet.UserServlet</servlet-class>
         <load-on-startup>5</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>SysUserServlet</servlet-name>
+        <servlet-class>school.libenhe.hotel.servlet.SysUserServlet</servlet-class>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
 
 
 
@@ -59,8 +64,12 @@
     <url-pattern>/foodType</url-pattern>
   </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UserServlet</servlet-name>
-        <url-pattern>/user</url-pattern>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SysUserServlet</servlet-name>
+        <url-pattern>/sysuser</url-pattern>
     </servlet-mapping>
 
   <welcome-file-list>

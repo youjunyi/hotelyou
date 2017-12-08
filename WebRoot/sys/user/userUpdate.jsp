@@ -37,7 +37,7 @@
 <!-- 主内容区域（数据列表或表单显示） -->
 <div id="MainArea">
 	<!-- 表单内容 -->
-	<form action="${pageContext.request.contextPath }/user?method=add" method="post" enctype="multipart/form-data">
+	<form action="${pageContext.request.contextPath }/user?method=update" method="post" enctype="multipart/form-data">
 		<!-- 本段标题（分段标题） -->
 		<div class="ItemBlock_Title">
         	<img width="4" height="7" border="0" src="${pageContext.request.contextPath }/sys/style/images/item_point.gif"> 用户信息&nbsp;
@@ -66,8 +66,8 @@
 							<td>性别</td>
 							<td>
 								<select name="sex" style="width:80px">
-									<option value="男">男</option>
-								<option value="女">女</option>
+									<option value="男" <c:if test="${'男' eq user.sex}">selected</c:if> >男</option>
+									<option value="女" <c:if test="${'女' eq user.sex}">selected</c:if>  >女</option>
 							</select>
 							</td>
 						</tr>
@@ -110,28 +110,28 @@
 				  <td>职称</td>
 				  <td>
 					  <select name="zhicheng" style="width:80px">
-					  		<option value="教授">教授</option>
-					  		<option value="副教授">副教授</option>
-						  <option value="讲师">讲师</option>
-						  <option value="助教">助教</option>
+					  		<option value="教授" <c:if test="${'教授' eq user.zhicheng}">selected</c:if> >教授</option>
+					  		<option value="副教授" <c:if test="${'副教授' eq user.zhicheng}">selected</c:if> >副教授</option>
+						  <option value="讲师" <c:if test="${'讲师' eq user.zhicheng}">selected</c:if> >讲师</option>
+						  <option value="助教" <c:if test="${'助教' eq user.zhicheng}">selected</c:if> >助教</option>
 				  </select>
 				  </td>
 			  </tr>
 			  <tr>
 				  <td>学历</td>
 				  <td><select name="xueli" style="width:80px">
-					  <option value="专科">专科</option>
-					  <option value="本科">本科</option>
-					  <option value="硕士研究生">硕士研究生</option>
-					  <option value="博士研究生">博士研究生</option>
+					  <option value="专科" <c:if test="${'专科' eq user.xueli}">selected</c:if> >专科</option>
+					  <option value="本科" <c:if test="${'本科' eq user.xueli}">selected</c:if> >本科</option>
+					  <option value="硕士研究生" <c:if test="${'硕士研究生' eq user.xueli}">selected</c:if> >硕士研究生</option>
+					  <option value="博士研究生" <c:if test="${'博士研究生' eq user.xueli}">selected</c:if> >博士研究生</option>
 				  </select></td>
 			  </tr>
 			  <tr>
 				  <td>学位</td>
 				  <td><select name="xuewei" style="width:80px">
-					  <option value="学士">学士</option>
-					  <option value="硕士">硕士</option>
-					  <option value="博士">博士</option>
+					  <option value="学士" <c:if test="${'学士' eq user.xuewei}">selected</c:if> >学士</option>
+					  <option value="硕士" <c:if test="${'硕士' eq user.xuewei}">selected</c:if> >硕士</option>
+					  <option value="博士" <c:if test="${'博士' eq user.xuewei}">selected</c:if> >博士</option>
 				  </select></td>
 			  </tr><tr>
 			  <td>外语程度</td>
@@ -140,25 +140,25 @@
 			  <td>所属部门</td>
 			  <td>
 				  <select name="dept" style="width:80px">
-					  <option value="信息科学与电气工程学院">信息科学与电气工程学院</option>
-					  <option value="土木学院">土木学院</option>
-					  <option value="机械学院">机械学院</option>
-					  <option value="汽车学院">汽车学院</option>
-					  <option value="航空学院">航空学院</option>
-					  <option value="经管学院">经管学院</option>
-					  <option value="轨道学院">轨道学院</option>
-					  <option value="理学院">理学院</option>
-					  <option value="交通与物流工程学院">交通与物流工程学院</option>
+					  <option value="信息科学与电气工程学院" <c:if test="${'信息科学与电气工程学院' eq user.dept}">selected</c:if> >信息科学与电气工程学院</option>
+					  <option value="土木学院" <c:if test="${'土木学院' eq user.dept}">selected</c:if> >土木学院</option>
+					  <option value="机械学院" <c:if test="${'机械学院' eq user.dept}">selected</c:if> >机械学院</option>
+					  <option value="汽车学院" <c:if test="${'汽车学院' eq user.dept}">selected</c:if> >汽车学院</option>
+					  <option value="航空学院" <c:if test="${'航空学院' eq user.dept}">selected</c:if> >航空学院</option>
+					  <option value="经管学院" <c:if test="${'经管学院' eq user.dept}">selected</c:if> >经管学院</option>
+					  <option value="轨道学院" <c:if test="${'轨道学院' eq user.dept}">selected</c:if> >轨道学院</option>
+					  <option value="理学院" <c:if test="${'理学院' eq user.dept}">selected</c:if> >理学院</option>
+					  <option value="交通与物流工程学院" <c:if test="${'交通与物流工程学院' eq user.xuewei}">selected</c:if> >交通与物流工程学院</option>
 			  </select>
 			  </td>
 		  </tr><tr>
 			  <td>教研室</td>
 			  <td>
 				  <select name="jianyanshi" style="width:80px">
-				  <option value="计算机科学与技术">计算机科学与技术</option>
-				  <option value="信息管理与信息系统">信息管理与信息系统</option>
-				  <option value="电气工程及其自动化">电气工程及其自动化</option>
-				  <option value="电子信息工程">电子信息工程</option>
+				  <option value="计算机科学与技术" <c:if test="${'计算机科学与技术' eq user.jianyanshi}">selected</c:if> >计算机科学与技术</option>
+				  <option value="信息管理与信息系统" <c:if test="${'信息管理与信息系统' eq user.jianyanshi}">selected</c:if> >信息管理与信息系统</option>
+				  <option value="电气工程及其自动化" <c:if test="${'电气工程及其自动化' eq user.jianyanshi}">selected</c:if> >电气工程及其自动化</option>
+				  <option value="电子信息工程" <c:if test="${'电子信息工程' eq user.jianyanshi}">selected</c:if> >电子信息工程</option>
 			  </select>
 			  </td>
 		  </tr><tr>
@@ -169,12 +169,7 @@
 							<td>备注</td>
 							<td><textarea name="beizhu" class="TextareaStyle">${user.beizhu}</textarea></td>
 						</tr>
-						<tr>
-							<td width="80px">菜品图片</td>
-							<td>
-								<input type="file" name="img"/> *
-							</td>
-						</tr>
+						
 					</table>
 				</div>
             </div>
@@ -186,7 +181,7 @@
             
 				
 				
-					 <input type="submit" value="添加" class="FunctionButtonInput">
+					 <input type="submit" value="修改" class="FunctionButtonInput">
 				
 			
             

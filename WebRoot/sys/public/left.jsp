@@ -106,6 +106,9 @@ body {
 				<li class="level2 level2Style">
 					<a target="right" href="${pageContext.request.contextPath }/user?method=list">用戶管理</a>
 				</li>
+				<li class="level2 level2Style">
+					<a target="right" href="${pageContext.request.contextPath }/sysuser?method=list">专家管理</a>
+				</li>
             </ul>
         </li>
     </ul>

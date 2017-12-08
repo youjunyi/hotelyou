@@ -13,6 +13,7 @@ public class Topic {
     private String ktlb;
     private String ktjb;
     private Long sysid;
+    private String issh;
 
     @Override
     public String toString() {
@@ -29,6 +30,7 @@ public class Topic {
                 ", ktlb='" + ktlb + '\'' +
                 ", ktjb='" + ktjb + '\'' +
                 ", sysid=" + sysid +
+                ", issh='" + issh + '\'' +
                 '}';
     }
 
@@ -126,5 +128,13 @@ public class Topic {
 
     public void setSysid(Long sysid) {
         this.sysid = sysid;
+    }
+
+    public String getIssh() {
+        return issh;
+    }
+
+    public void setIssh(String issh) {
+        this.issh = issh;
     }
 }

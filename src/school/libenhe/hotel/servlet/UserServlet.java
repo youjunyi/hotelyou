@@ -49,7 +49,7 @@ public class UserServlet extends HttpServlet {
         } else if ("list".equals(method)) {
             list(request, response);
         } else if ("update".equals(method)) {
-          //  update(request, response);
+            update(request, response);
         } else if ("delete".equals(method)) {
             delete(request, response);
         } else if ("search".equals(method)) {
@@ -65,6 +65,50 @@ public class UserServlet extends HttpServlet {
         }
 
     }
+
+    private void update(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            FileItemFactory factory = new DiskFileItemFactory();
+            ServletFileUpload upload = new ServletFileUpload(factory);
+            upload.setFileSizeMax(10 * 1024 * 1024); // 单个文件大小限制
+            upload.setSizeMax(50 * 1024 * 1024); // 总文件大小限制
+            upload.setHeaderEncoding("UTF-8"); // 对中文文件编码处理
+
+            if (upload.isMultipartContent(request)) {
+
+                User user = new User();
+                List<FileItem> list = upload.parseRequest(request);
+                for (FileItem item : list) {
+
+                    if (item.isFormField()) {// 普通本文内容
+                        String name = item.getFieldName();
+                        // 获取值
+                        String value = item.getString();
+                        value = new String(value.getBytes("ISO-8859-1"),
+                                "UTF-8");
+                        BeanUtils.setProperty(user, name, value);
+                    } 
+                }
+                service.updata(user);
+
+            } else {
+
+            }
+            list(request, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            uri = "/error/error.jsp";
+            WebUtils.goTo(request, response, uri);
+        }
+    }
+
+
+
+
+
+
     private void search(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {

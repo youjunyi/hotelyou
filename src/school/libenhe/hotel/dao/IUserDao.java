@@ -15,4 +15,6 @@ public interface IUserDao {
     List<User> query(String name);
 
     User findById(int i);
+
+    void updata(User user);
 }

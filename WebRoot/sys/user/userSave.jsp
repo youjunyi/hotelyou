@@ -168,12 +168,7 @@
 							<td>备注</td>
 							<td><textarea name="beizhu" class="TextareaStyle"></textarea></td>
 						</tr>
-						<tr>
-							<td width="80px">菜品图片</td>
-							<td>
-								<input type="file" name="img"/> *
-							</td>
-						</tr>
+						
 					</table>
 				</div>
             </div>

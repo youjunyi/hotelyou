@@ -71,17 +71,7 @@ public class UserDao implements IUserDao {
 
     }
 
-    @Override
-    public void add(User user) {
-        String sql = " INSERT user(name,number,password,sex,minzhu,cno,adds,telephone,emil,birth,cjgzdate,zhuanye,yuanxiao,zhicheng,xueli,waiyu,dept,jianyanshi,yjfx,beizhu,xuewei) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        try {
-            qr.update(sql,user.getName(),user.getNumber(),"000000",user.getSex(),user.getMinzhu(),user.getCno(),user.getAdds(),user.getTelephone(),user.getEmil(),user.getBirth(),user.getCjgzdate(),user.getZhuanye(),user.getYuanxiao(),user.getZhicheng(),user.getXueli(),user.getWaiyu(),user.getDept(),user.getJianyanshi(),user.getYjfx(),user.getBeizhu(),user.getXuewei());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-
-    }
+  
 
     @Override
     public void delete(int i) {
@@ -109,6 +99,30 @@ public class UserDao implements IUserDao {
          	String sql = "SELECT * FROM user where id =?";
         try {
             return qr.query(sql, new BeanHandler<User>(User.class), i);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void add(User user) {
+        String sql = " INSERT user(name,number,password,sex,minzhu,cno,adds,telephone,emil,birth,cjgzdate,zhuanye,yuanxiao,zhicheng,xueli,waiyu,dept,jianyanshi,yjfx,beizhu,xuewei) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            qr.update(sql,user.getName(),user.getNumber(),"000000",user.getSex(),user.getMinzhu(),user.getCno(),user.getAdds(),user.getTelephone(),user.getEmil(),user.getBirth(),user.getCjgzdate(),user.getZhuanye(),user.getYuanxiao(),user.getZhicheng(),user.getXueli(),user.getWaiyu(),user.getDept(),user.getJianyanshi(),user.getYjfx(),user.getBeizhu(),user.getXuewei());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    @Override
+    public void updata(User user) {
+        String sql = "UPDATE user SET name=?,number=?,sex=?,minzhu=?,cno=?,adds=?,telephone=?,emil=?,birth=?,cjgzdate=?,zhuanye=?,yuanxiao=?,zhicheng=?,xueli=?,waiyu=?,dept=?,jianyanshi=?,yjfx=?,beizhu=?,xuewei=? WHERE id =?";
+        try {
+            qr.update(sql, user.getName(),user.getNumber(),user.getSex(),user.getMinzhu(),user.getCno(),user.getAdds(),user.getTelephone(),user.getEmil(),user.getBirth(),user.getCjgzdate(),user.getZhuanye(),user.getYuanxiao(),user.getZhicheng(),user.getXueli(),user.getWaiyu(),user.getDept(),user.getJianyanshi(),user.getYjfx(),user.getBeizhu(),user.getXuewei(),user.getId());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

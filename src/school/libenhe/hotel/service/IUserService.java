@@ -16,4 +16,6 @@ public interface IUserService
     void delete(int i);
 
     User findById(int i);
+
+    void updata(User user);
 }
